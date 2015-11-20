@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="gifshot.js"></script>
+<script type="text/javascript" src="pull_gif.js"></script>
+
+<style type='text/css'>
+    h2    { text-align: center;
+            font-family: sans-serif;
+          }
+    h4    { text-align: center;
+            font-family: sans-serif;
+          }
+    form  { display: table;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    p     { display: table-row; }
+    label { display: table-cell;
+            text-align: center;
+          }
+    input { display: table-cell; }
+    #container {
+            display: block;
+            width: 50%;
+            float: left;
+    }
+    #window {
+            margin: 0 auto;
+            margin-top: 50px;
+            overflow-y: scroll;
+            max-height: 250px; 
+            width: 70%;
+    }
+    #image-container {
+            padding: 80px;
+            padding-top: 50px;
+            margin: 0 auto;
+            float: left;
+    }
+</style>
+</head>
+<body>
+    <div id = 'container'>
+        <h2> NASA VIEW FINDER </h2>
+        
+        <h4>Please use the appropriate formats below:</h4> 
+        <h4>For dates: YYYY-MM-DD and for coordinates: decimals</h4> 
+        <form>
+        <p>
+            <label for="begin">Date begin:</label>
+            <input id="begin" type="text" placeholder="2015-01-01">
+        </p>
+        <p>
+            <label for="end">Date end:</label>
+            <input id="end" type="text" placeholder="2015-06-25">
+        </p>
+        <p>
+            <label for="latitude">Latitude:</label>
+            <input id="latitude" type="text" placeholder="39.537975">
+        </p>
+        <p>
+            <label for="longitude">Longitude:</label>
+            <input id="longitude" type="text" placeholder="-119.439096">
+        </p>
+        <input type="submit" value="Submit" onclick="createQueryObj()"/>
+        </form>
+        <div id='window'> 
+        </div>
+    </div>
+    <div id='image-container'>
+    </div>
+    
+<script>
+window.onbeforeunload = function() {
+    return "Please do not navigate away from this page!";
+}
+</script>
+</body>
+
