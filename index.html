@@ -25,6 +25,7 @@
             display: block;
             width: 50%;
             float: left;
+            text-align: center;
     }
     #window {
             margin: 0 auto;
@@ -32,6 +33,7 @@
             overflow-y: scroll;
             max-height: 250px; 
             width: 70%;
+            text-align: left;
     }
     #image-container {
             padding: 80px;
@@ -39,6 +41,11 @@
             margin: 0 auto;
             float: left;
     }
+    #div-button {
+        padding-top: 10px;
+        text-align: center;
+    }
+
 </style>
 </head>
 <body>
@@ -64,18 +71,16 @@
             <label for="longitude">Longitude:</label>
             <input id="longitude" type="text" placeholder="-119.439096">
         </p>
-        <input type="submit" value="Submit" onclick="createQueryObj()"/>
         </form>
-        <div id='window'> 
-        </div>
-    </div>
-    <div id='image-container'>
+        
+            <div id="div-button">
+            <input id="button" type="button" value="Submit" onclick="createQueryObj()"/>
+            </div>
+        
+            <div id='window'> 
+            </div>
     </div>
     
-<script>
-window.onbeforeunload = function() {
-    return "Please do not navigate away from this page!";
-}
-</script>
+    <div id='image-container'>
+    </div>
 </body>
-
